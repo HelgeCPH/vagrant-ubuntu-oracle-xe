@@ -3,6 +3,43 @@
 This project enables you to install Oracle 11g XE in a virtual machine running Ubuntu 12.04, using
 [Vagrant] and [Puppet].
 
+## Quickstart
+
+This project with all its functionality is forked from https://github.com/hilverd/vagrant-ubuntu-oracle-xe.git
+
+In the following is a step by step guide to get you up and running.
+
+  * Download and install VirtualBox (https://www.virtualbox.org/wiki/Downloads)
+  * Download and install Vagrant (https://www.vagrantup.com/downloads.html)
+    * To get started with Vagrant on Windows, see https://www.sitepoint.com/getting-started-vagrant-windows/ Focus in particular on using PuTTY instead of SSH on Windows
+    *
+  * Download Oracle Database 11g Express Edition (http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.htmlCreate). *NOTE* Do not unzip the archive yet If you do not have an account at Oracle already you have to create one.
+  * Download and install SQL Developer http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html
+  * Install VirtualBox Guest Additions via your command line:
+
+        vagrant plugin install vagrant-vbguest
+
+  * Check out this project into a directory of your choice (`/path/to/`):
+
+        git clone https://github.com/HelgeCPH/vagrant-ubuntu-oracle-xe.git
+
+  * On the command line change directory to where you cloned this repository (`/path/to/`)
+
+        cd /path/to/
+
+  * Move the downloaded ZIP file from the `Downloads` directory to `./modules/oracle/files/`
+
+        mv ~/Downloads/oracle-xe-11.2.0-1.0.x86_64.rpm.zip ./modules/oracle/files/
+
+  * Subsequently, start up the VM, which will take a bit on the first start up.
+
+        vagrant up
+
+  * Now, start SQL Developer and connect to a new database, see screenshot below. The username is `system` and the password is `manager`. Set the rest of the parameters as illustrated below.
+
+  ![DB Connection](docs/connect.png)
+
+
 ## Acknowledgements
 
 This project was created based on the information in
