@@ -12,7 +12,7 @@ In the following is a step by step guide to get you up and running.
   * Download and install VirtualBox (https://www.virtualbox.org/wiki/Downloads)
   * Download and install Vagrant (https://www.vagrantup.com/downloads.html)
     * To get started with Vagrant on Windows, see https://www.sitepoint.com/getting-started-vagrant-windows/ Focus in particular on using PuTTY instead of SSH on Windows
-    *
+    * On Unix'ish operating systems, if you did not already generate an SSH keypair, generate one (e.g., via `ssh-keygen -t rsa`)
   * Download Oracle Database 11g Express Edition (http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.htmlCreate). **NOTE:** Do not unzip the archive yet If you do not have an account at Oracle already you have to create one.
   * Download and install SQL Developer http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html
   * Install VirtualBox Guest Additions via your command line:
