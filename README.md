@@ -1,7 +1,7 @@
 # Oracle XE 11g on Ubuntu 12.04 using Vagrant
 
-This project enables you to install Oracle 11g XE in a virtual machine running Ubuntu 12.04, using
-[Vagrant] and [Puppet].
+This project enables you to install Oracle 11g XE in a virtual machine running Ubuntu 12.04, using [Vagrant] and [Puppet].
+
 
 ## Quickstart
 
@@ -11,9 +11,8 @@ In the following is a step by step guide to get you up and running.
 
   * Download and install VirtualBox (https://www.virtualbox.org/wiki/Downloads)
   * Download and install Vagrant (https://www.vagrantup.com/downloads.html)
-    * To get started with Vagrant on Windows, see https://www.sitepoint.com/getting-started-vagrant-windows/ Focus in particular on using PuTTY instead of SSH on Windows
-    * On Unix'ish operating systems, if you did not already generate an SSH keypair, generate one (e.g., via `ssh-keygen -t rsa`)
   * Download Oracle Database 11g Express Edition (http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html).
+    * Download the RPM with the following name: `oracle-xe-11.2.0-1.0.x86_64.rpm.zip`
     * **NOTE:** Do not unzip the archive yet!
     * If you do not have an account at Oracle already you have to create one.
   * Download and install SQL Developer http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html
@@ -37,9 +36,21 @@ In the following is a step by step guide to get you up and running.
 
         vagrant up
 
+    * **OBS: Windows Users** Not all notebook producers enable virtualization by default. That is, `vagrant up` might end with an error message saying something along the lines that "VT-x is not enabled in BIOS". If you get this error then reboot your computer and enable virtualization in your BIOS settings. Subsequently, reboot again and execute the above command again.
+
   * Now, start SQL Developer and connect to a new database, see screenshot below. The username is `system` and the password is `manager`. Set the rest of the parameters as illustrated below.
 
   ![DB Connection](docs/connect.png)
+
+  * When you are done working on your database and your projects you can put the virtual machine to sleep, by issuing `vagrant suspend` in the terminal in which you ran `vagrant up`
+
+## Logging to the VM
+
+  During the first lectures it is not necessary that you log onto the VM. If you want to do so however run `vagrant ssh` after running `vagrant up`. In case you have SSH setup and configured already you should be directly be logged onto the machine.
+
+  **OBS: Windows Users** Windows does not ship with SSH by default. Consequently, follow this guide for configuring PuTTY instead of SSH https://www.sitepoint.com/getting-started-vagrant-windows/. Alternatively, install Git for Windows (https://git-for-windows.github.io) and follow the directions on http://stackoverflow.com/a/16247703
+
+  On Unix'ish operating systems, if you did not already generate an SSH keypair, generate one (e.g., via `ssh-keygen -t rsa`)
 
 
 ## Acknowledgements
